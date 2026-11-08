@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mulm-tum.de</title>
+<meta name="description" content="A small capture the flag. Every flag you find tells you a bit more about me.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0e0b'/%3E%3Ctext x='4' y='22' font-family='monospace' font-size='17' font-weight='700' fill='%235af78e'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="module" src="/assets/app.js"></script>
+<script src="/assets/console.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/">mulm<span class="at">@</span>tum<span class="cursor" aria-hidden="true">_</span></a>
+    <div class="progress">
+      <span id="progress-text">level 0</span>
+      <ol id="progress-bar" aria-hidden="true"></ol>
+    </div>
+  </header>
+
+  <main>
+    <section class="level" id="level-0">
+      <p class="prompt"><span>$</span>cat welcome.txt</p>
+      <h1>Hi. You found my corner of the internet.</h1>
+      <p>This site is a small <strong>capture the flag</strong>. I didn't write an "about me" page.
+        Instead I hid it behind a few puzzles. Every flag you find unlocks the next level and
+        tells you a bit more about who I am and what I do.</p>
+      <p>Flags look like <code class="flag-text">mulm{...}</code>. Paste one into the box at the bottom.
+        No experience needed, and every challenge comes with a hint.</p>
+
+      <div class="challenge">
+        <h2>challenge 01</h2>
+        <p>The first flag is closer than you think. Your browser shows you this page,
+          but not everything that's in it.</p>
+        <details>
+          <summary>hint</summary>
+          <p>Right-click the page and choose <em>View page source</em>, or press <kbd>Ctrl</kbd>+<kbd>U</kbd>.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- note to self: remove this test flag before going live: mulm{s0urc3_c0d3_t3lls_4ll} -->
+
+    <div id="levels"></div>
+  </main>
+
+  <form id="flag-form" class="flag-form" autocomplete="off" novalidate>
+    <label for="flag">submit flag</label>
+    <div class="field">
+      <span class="ps1" aria-hidden="true">&gt;</span>
+      <input id="flag" name="flag" type="text" placeholder="mulm{...}" spellcheck="false" autocapitalize="off" autocorrect="off" required>
+      <button type="submit">submit</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <section id="complete" class="complete" hidden>
+    <p class="prompt"><span>$</span>logout</p>
+    <p>All flags captured. Thanks for playing.</p>
+  </section>
+
+  <footer>
+    <span>No tracking, no cookies. Your progress stays in your browser.</span>
+    <button id="reset" type="button">reset progress</button>
+  </footer>
+</div>
+
+<noscript><div class="wrap"><p>This site needs JavaScript to check flags.</p></div></noscript>
+</body>
+</html>

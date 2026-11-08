@@ -1,0 +1,14 @@
+{
+  "name": "mulm-tum.de",
+  "private": true,
+  "type": "module",
+  "description": "Personal capture-the-flag website",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node test.mjs",
+    "preview": "node build.mjs && node serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

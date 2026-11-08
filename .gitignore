@@ -1,0 +1,4 @@
+# Private: all flags and locked content. Never commit or publish.
+content/
+
+node_modules/
